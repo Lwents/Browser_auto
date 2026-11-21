@@ -1,0 +1,19 @@
+# Mỗi dòng một proxy. Dòng bắt đầu bằng # là ghi chú.
+#
+# Các định dạng được hỗ trợ:
+#   host:port
+#   host:port:user:pass
+#   user:pass@host:port
+#   http://user:pass@host:port
+#   socks5://user:pass@host:port
+#   direct
+#
+# Ví dụ (xóa dấu # và thay bằng proxy thật):
+# 203.0.113.10:8080
+# 203.0.113.11:8080:myuser:mypassword
+# myuser:mypassword@203.0.113.12:8080
+# http://myuser:mypassword@203.0.113.13:8080
+# socks5://203.0.113.14:1080
+#
+# Lưu ý: mỗi cửa sổ sẽ dùng một proxy khác nhau. Nên có ít nhất
+# số proxy >= số cửa sổ (pool.concurrency) để không phải dùng chung.

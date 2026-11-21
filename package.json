@@ -1,0 +1,24 @@
+{
+  "name": "browser-auto",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Mo nhieu trinh duyet, moi cua so mot proxy, luot web nhu nguoi that va tu dong xoay proxy.",
+  "type": "module",
+  "main": "src/index.js",
+  "bin": {
+    "browser-auto": "src/index.js"
+  },
+  "scripts": {
+    "start": "node src/index.js",
+    "once": "node src/index.js --once",
+    "check": "node src/index.js --check-proxies",
+    "setup": "playwright install chromium",
+    "test": "node --test test/*.test.js"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "dependencies": {
+    "playwright": "1.65.0"
+  }
+}

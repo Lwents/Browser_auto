@@ -1,0 +1,91 @@
+{
+  "browser": {
+    "headless": false,
+    "profileMode": "persistent",
+    "profilesDir": "data/profiles",
+    "dataDir": "data",
+    "logDir": "logs",
+    "defaultLocale": "vi-VN",
+    "defaultTimezone": "Asia/Ho_Chi_Minh",
+    "navigationTimeoutMs": 45000,
+    "actionTimeoutMs": 20000,
+    "slowMoMs": 0,
+    "viewport": {
+      "widthMin": 1280,
+      "widthMax": 1536,
+      "heightMin": 720,
+      "heightMax": 864
+    },
+    "closePopups": true,
+    "extraArgs": []
+  },
+  "pool": {
+    "concurrency": 3,
+    "sessionMinutes": { "min": 8, "max": 15 },
+    "idleBetweenSessionsSeconds": { "min": 15, "max": 45 },
+    "sitesPerSession": { "min": 2, "max": 5 },
+    "maxCyclesPerWorker": 0,
+    "recentProxyMemory": 3
+  },
+  "proxy": {
+    "file": "proxies.txt",
+    "checkOnStart": true,
+    "checkUrl": "https://api.ipify.org?format=json",
+    "checkTimeoutMs": 20000,
+    "checkConcurrency": 3,
+    "checkAttempts": 2,
+    "maxFailures": 3,
+    "cooldownMinutes": 15,
+    "geoLookup": true
+  },
+  "behavior": {
+    "clickLinkChance": 0.75,
+    "readSeconds": { "min": 35, "max": 100 },
+    "shortReadSeconds": { "min": 15, "max": 40 },
+    "idleBreakChance": 0.2,
+    "idleBreakSeconds": { "min": 10, "max": 30 },
+    "dismissOverlays": true
+  },
+  "sites": {
+    "categories": {
+      "news": {
+        "weight": 45,
+        "behavior": "news",
+        "sites": [
+          { "name": "VnExpress", "url": "https://vnexpress.net/" },
+          { "name": "Dân trí", "url": "https://dantri.com.vn/" },
+          { "name": "Tuổi Trẻ", "url": "https://tuoitre.vn/" },
+          { "name": "Thanh Niên", "url": "https://thanhnien.vn/" },
+          { "name": "Nhân Dân", "url": "https://nhandan.vn/" },
+          { "name": "VietnamNet", "url": "https://vietnamnet.vn/" },
+          { "name": "Kenh14", "url": "https://kenh14.vn/" },
+          { "name": "Soha", "url": "https://soha.vn/" }
+        ]
+      },
+      "shopping": {
+        "weight": 40,
+        "behavior": "shopping",
+        "sites": [
+          { "name": "Shopee", "url": "https://shopee.vn/" },
+          { "name": "Tiki", "url": "https://tiki.vn/" },
+          { "name": "Lazada", "url": "https://www.lazada.vn/" },
+          { "name": "Thế Giới Di Động", "url": "https://www.thegioididong.com/" },
+          { "name": "CellphoneS", "url": "https://cellphones.com.vn/" },
+          { "name": "FPT Shop", "url": "https://fptshop.com.vn/" },
+          { "name": "Nguyễn Kim", "url": "https://www.nguyenkim.com/" },
+          { "name": "Điện Máy Xanh", "url": "https://www.dienmayxanh.com/" }
+        ]
+      },
+      "tech": {
+        "weight": 15,
+        "behavior": "news",
+        "sites": [
+          { "name": "GenK", "url": "https://genk.vn/" },
+          { "name": "Tinh Tế", "url": "https://tinhte.vn/" },
+          { "name": "Quản Trị Mạng", "url": "https://quantrimang.com/" },
+          { "name": "GameK", "url": "https://gamek.vn/" }
+        ]
+      }
+    }
+  }
+}
