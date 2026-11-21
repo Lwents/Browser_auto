@@ -216,6 +216,13 @@ node src/index.js --reset-profiles
 - SOCKS5 có username/password có thể không được Chromium hỗ trợ đầy đủ; nếu lỗi, dùng HTTP proxy.
 - Chỉ dùng proxy mà bạn có quyền sử dụng. Tuân thủ điều khoản của website và pháp luật; không dùng để spam, gian lận hoặc tấn công.
 
+## Bảo mật
+
+- Chính sách báo cáo lỗ hổng: xem [`SECURITY.md`](SECURITY.md) hoặc tab **Security** của repo.
+- Không commit `config.json`, `proxies.txt`, `data/`, `logs/` — đã có trong `.gitignore`.
+- Mật khẩu proxy bị ẩn (`***`) khi ghi log.
+- Chỉ dùng proxy và website mà bạn có quyền; không dùng để spam, gian lận hoặc tấn công.
+
 ## Xử lý sự cố
 
 | Lỗi | Cách xử lý |
@@ -246,6 +253,7 @@ src/
 test/                   unit test
 config.example.json     cấu hình mẫu
 proxies.example.txt     định dạng proxy mẫu
+SECURITY.md             chính sách báo cáo lỗ hổng
 start.cmd / setup.cmd   tiện ích Windows
 ```
 

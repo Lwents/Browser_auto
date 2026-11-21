@@ -17,6 +17,8 @@ src/browser/fingerprint.js  UA/viewport/locale/timezone theo geo + init script
 src/browser/human.js    chuột, cuộn, đọc, click link (verify + hit-test), dismissOverlays
 src/browser/sites.js    flow news / shopping / generic
 test/                   node:test (15 test)
+SECURITY.md             chính sách báo cáo lỗ hổng
+.gitattributes          chuẩn hóa LF, .cmd dùng CRLF
 ```
 
 ## Lệnh
@@ -40,11 +42,11 @@ Get-ChildItem src,test -Recurse -Filter *.js | ForEach-Object { node --check $_.
 
 ## Trạng thái
 - Hoàn chỉnh, test pass, smoke test pass: direct, HTTP proxy thật, 2 worker, xoay proxy 2 chu kỳ, ephemeral, dead-proxy exit 1, shopping TGDD.
-- README.md + AGENTS.md đã có.
+- README.md + AGENTS.md + SECURITY.md đã có; đã bật security policy để GitHub hết cảnh báo "No security policy detected".
 
 ## TODO / lưu ý
 - Chưa có CI; chưa test trên Linux/macOS.
 - SOCKS5 có auth có thể không chạy với Chromium → khuyến nghị HTTP proxy.
 - Không giải captcha/Cloudflare.
 - File local không commit: `config.json`, `proxies.txt`, `data/`, `logs/`.
-- Proxy test từng dùng: `160.250.166.29:10024` (có thể hết hạn).
+- Không ghi proxy thật / mật khẩu vào README, AGENTS, commit.
