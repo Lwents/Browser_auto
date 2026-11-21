@@ -1,5 +1,7 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
+import fs from 'node:fs';
+import os from 'node:os';
 import path from 'node:path';
 import { loadConfig, ROOT } from '../src/config.js';
 
@@ -30,4 +32,16 @@ test('từ chối concurrency sai', () => {
       }),
     /concurrency/
   );
+});
+
+test('từ chối prototype pollution trong config', () => {
+  const dir = fs.mkdtempSync(path.join(os.tmpdir(), 'browser-auto-'));
+  const file = path.join(dir, 'config.json');
+  fs.writeFileSync(file, '{"__proto__":{"polluted":true}}');
+  try {
+    assert.throws(() => loadConfig({ configPath: file }), /__proto__/);
+    assert.equal({}.polluted, undefined);
+  } finally {
+    fs.rmSync(dir, { recursive: true, force: true });
+  }
 });

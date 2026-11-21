@@ -100,10 +100,15 @@ function isPlainObject(value) {
   return value !== null && typeof value === 'object' && !Array.isArray(value);
 }
 
+const FORBIDDEN_KEYS = new Set(['__proto__', 'constructor', 'prototype']);
+
 function deepMerge(base, override) {
   if (!isPlainObject(override)) return override === undefined ? base : override;
   const result = { ...base };
   for (const [key, value] of Object.entries(override)) {
+    if (FORBIDDEN_KEYS.has(key)) {
+      throw new Error(`Cấu hình chứa khóa không hợp lệ: "${key}".`);
+    }
     if (isPlainObject(value) && isPlainObject(base?.[key])) {
       result[key] = deepMerge(base[key], value);
     } else {

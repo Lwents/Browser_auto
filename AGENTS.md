@@ -16,7 +16,7 @@ src/browser/worker.js   vòng đời worker, launch context theo proxy, rotate
 src/browser/fingerprint.js  UA/viewport/locale/timezone theo geo + init script
 src/browser/human.js    chuột, cuộn, đọc, click link (verify + hit-test), dismissOverlays
 src/browser/sites.js    flow news / shopping / generic
-test/                   node:test (15 test)
+test/                   node:test (16 test)
 SECURITY.md             chính sách báo cáo lỗ hổng
 .gitattributes          chuẩn hóa LF, .cmd dùng CRLF
 ```
@@ -24,7 +24,7 @@ SECURITY.md             chính sách báo cáo lỗ hổng
 ## Lệnh
 ```bat
 npm install
-npm test                          :: 15 test
+npm test                          :: 16 test
 npm start                         :: chạy theo config.json
 npm run once                      :: mỗi worker 1 phiên
 npm run check                     :: chỉ kiểm tra proxy
